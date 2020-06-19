@@ -1,7 +1,61 @@
+.main-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (auto)[2];
+      grid-template-rows: repeat(2, auto);
+}
+
 .days-container {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[7];
       grid-template-columns: repeat(7, 1fr);
+  -webkit-column-gap: 8px;
+          column-gap: 8px;
+  row-gap: 8px;
+  color: #2e2e2e;
+}
+
+.days-container .action-container, .days-container .button {
+  border: 2px solid #2e2e2e;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 3vw;
+  font-family: 'Montserrat';
+}
+
+.days-container .action-container {
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  border-radius: 10px 10px;
+  background-color: #fafaba;
+  grid-column: span 7;
+  height: 20vw;
+  margin-bottom: 8px;
+}
+
+.days-container .action-container.off {
+  border: none;
+  height: 0;
+  margin-bottom: 0px;
+}
+
+.days-container .button {
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #b2f3ed;
+}
+
+.days-container > .button::before {
+  content: '';
+  padding-bottom: 100%;
 }
 /*# sourceMappingURL=styles.css.map */
