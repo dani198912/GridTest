@@ -31,21 +31,20 @@ $main-color : #f7f7f7;
         border-radius: 10px 10px;
         background-color: $main-color;
         grid-column: span 7;
-        min-height: 20vw;
+        max-height: 40vh;
         margin-bottom: 8px;
         scrollbar-width: thin;
         scrollbar-color: #96d9ee #eaf9fa;
+        transition: height 0.5s ease-in ;
 
         .hours-container{
             display: grid;
             grid-template-columns: repeat(24, 1fr);
-            // grid-gap: 10px 0px;
             width: 100%;
-            // max-width: 1150px;
-            // padding-top: 40px;
             margin: 0 auto;
-            transition: all 0.1s ease-in ;
-            
+            transition: all 0.5s ease-in ;
+            overflow-x: scroll;
+            // overflow-y: scroll;
         }
         .hour{
             grid-row:1;
@@ -55,10 +54,13 @@ $main-color : #f7f7f7;
             transform: rotate(180deg);
             text-align: right;
             font-size: 60%;
+            @media (min-width: 1150px) {
+                font-size: 30%;
+            }
         }
         span{
             border-left: 1px dashed grey;
-            grid-row: 1 / span 6;
+            grid-row: 1 / span 19;
         }
         .task{
             display: flex;
@@ -72,7 +74,9 @@ $main-color : #f7f7f7;
             align-self: center;
             resize: horizontal;
             overflow: auto;
-            
+            @media (min-width: 1150px) {
+                font-size: 25%;
+            }
         }
     }
     
@@ -85,8 +89,9 @@ $main-color : #f7f7f7;
     }
     .action-container.off{
         border:none;
-        height: 0;
+        height: 0px;
         margin-bottom: 0px;
+        transition: height 0.5s ease-in ;
     }
     .button{
         border-radius: 50%;

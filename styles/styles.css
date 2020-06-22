@@ -39,10 +39,12 @@
   border-radius: 10px 10px;
   background-color: #f7f7f7;
   grid-column: span 7;
-  min-height: 20vw;
+  max-height: 40vh;
   margin-bottom: 8px;
   scrollbar-width: thin;
   scrollbar-color: #96d9ee #eaf9fa;
+  -webkit-transition: height 0.5s ease-in;
+  transition: height 0.5s ease-in;
 }
 
 .days-container .action-container .hours-container {
@@ -52,8 +54,9 @@
       grid-template-columns: repeat(24, 1fr);
   width: 100%;
   margin: 0 auto;
-  -webkit-transition: all 0.1s ease-in;
-  transition: all 0.1s ease-in;
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+  overflow-x: scroll;
 }
 
 .days-container .action-container .hour {
@@ -70,11 +73,17 @@
   font-size: 60%;
 }
 
+@media (min-width: 1150px) {
+  .days-container .action-container .hour {
+    font-size: 30%;
+  }
+}
+
 .days-container .action-container span {
   border-left: 1px dashed grey;
   -ms-grid-row: 1;
-  -ms-grid-row-span: 6;
-  grid-row: 1 / span 6;
+  -ms-grid-row-span: 19;
+  grid-row: 1 / span 19;
 }
 
 .days-container .action-container .task {
@@ -96,6 +105,12 @@
   overflow: auto;
 }
 
+@media (min-width: 1150px) {
+  .days-container .action-container .task {
+    font-size: 25%;
+  }
+}
+
 .days-container .occupied {
   border-radius: 5px 5px;
   margin: 5px;
@@ -105,8 +120,10 @@
 
 .days-container .action-container.off {
   border: none;
-  height: 0;
+  height: 0px;
   margin-bottom: 0px;
+  -webkit-transition: height 0.5s ease-in;
+  transition: height 0.5s ease-in;
 }
 
 .days-container .button {
